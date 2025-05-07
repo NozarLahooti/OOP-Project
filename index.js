@@ -78,8 +78,12 @@ const CourseInfo = {
   
   function getLearnerData(course, ag, submissions) {
     // here, we would process this data to achieve the desired result.
-    for (let c in CourseInfo){
-        console.log(CourseInfo[c])
+    // for (let c in CourseInfo){
+    //     console.log(CourseInfo[c])
+    // }
+    for (let l in LearnerSubmissions){
+        let learnerArr = [LearnerSubmissions[l].learner_id]
+        console.log(learnerArr) //learner ID Array
     }
     const result = [
       {
