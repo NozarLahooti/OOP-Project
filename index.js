@@ -102,13 +102,44 @@ const CourseInfo = {
   
   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
 
-    // Accepted due date to get points
-    
-    const deadLine = new Date("2023-02-27");
+    // Accepted assignments by due date to get points. 
+
+    const deadLine = new Date("2024-02-27");
     const accAssignment = AssignmentGroup.assignments.filter(d => {
     const lastDate = new Date(d.due_at);
       return lastDate < deadLine;
-    })                                                          
+    })                                       
+    
+    // Sum of all points based on due date
+
+    let sumPoints = 0;
+
+    accAssignment.forEach(p => {
+      sumPoints += p.points_possible
+      return sumPoints
+      
+    })
+    console.log(sumPoints)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   console.log(result);
   
