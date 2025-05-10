@@ -78,14 +78,10 @@ const CourseInfo = {
   
   function getLearnerData(course, ag, submissions) {
     // here, we would process this data to achieve the desired result.
+
+
    
-    for (let l in LearnerSubmissions){
-        let learnerArr = [LearnerSubmissions[l].learner_id]
-        console.log(learnerArr)                                       //learner ID Array
-    }
-     for (let c in CourseInfo){
-        console.log(CourseInfo[c])
-    }
+ 
     const result = [
       {
         id: 125,
@@ -105,6 +101,46 @@ const CourseInfo = {
   }
   
   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
+
+    const now = new Date();
+    const accAssignment = AssignmentGroup.assignments.filter(d => {
+      const dueDate = new Date("2023-02-27")
+      
+    })
   
   console.log(result);
   
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // for (let assignment of AssignmentGroup.assignments){
+  //   console.log(assignment.points_possible)                          // ALl Points Possible 
+  // }
+
+
+  // LearnerSubmissions.filter((item) => {
+  //   return item.score
+  // })
+  // console.log(LearnerSubmissions)
