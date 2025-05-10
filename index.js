@@ -102,11 +102,13 @@ const CourseInfo = {
   
   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
 
-    const now = new Date();
+    // Accepted due date to get points
+    
+    const deadLine = new Date("2023-02-27");
     const accAssignment = AssignmentGroup.assignments.filter(d => {
-      const dueDate = new Date("2023-02-27")
-      
-    })
+    const lastDate = new Date(d.due_at);
+      return lastDate < deadLine;
+    })                                                          
   
   console.log(result);
   
