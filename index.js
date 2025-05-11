@@ -117,20 +117,56 @@ accAssignment.forEach((p) => {
 });
 console.log(sumPoints);
 
-console.log(result);
-
 // Find the 125-ID & 132-ID total scores (Due date Not considered)
-    sumScores125 = 0;
-    sumScores132 = 0;
 
-    LearnerSubmissions.forEach(l => {
-      if(l.learner_id === 125) {
-        sumScores125 += l.submission.score
-      } else {
-        sumScores132 += l.submission.score
-      }
-    })
-    console.log(`ID-125 Scores : ${sumScores125}, ID-132 Scores: ${sumScores132}`)
+sumScores125 = 0;
+sumScores132 = 0;
+const onTimeScores = accAssignment.map((i) => i.id); // Check Scores Based On The Due Dates Acceptance
+console.log(`This is the due date list :${onTimeScores}`);
+
+LearnerSubmissions.forEach((l) => {
+  let acceptScore = false;
+  for (i = 0; i < onTimeScores.length; i++) {
+    
+    if (l.assignment_id === onTimeScores[i]) {
+      acceptScore = true;
+      break;
+    }
+  }
+
+  if (l.learner_id === 125 && acceptScore) {
+    sumScores125 += l.submission.score;
+  } else {
+    sumScores132 += l.submission.score;
+  }
+});
+console.log(`ID-125 Scores : ${sumScores125}, ID-132 Scores: ${sumScores132}`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log(result);
 
 
 
