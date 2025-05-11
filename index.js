@@ -143,7 +143,42 @@ console.log(
   `ID-125 Scores : ${sumScores125}/${sumPoints}, ID-132 Scores: ${sumScores132}/${sumPoints}`
 );
 
+
+const avg125 = sumScores125 / sumPoints;
+const avg132 = sumScores132 / sumPoints;
+console.log(`The average of ID-125 : ${avg125}%, The average of ID-132 : ${avg132}%`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // for (let assignment of AssignmentGroup.assignments){
 //   console.log(assignment.points_possible)                          // ALl Points Possible
