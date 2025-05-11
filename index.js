@@ -115,19 +115,18 @@ accAssignment.forEach((p) => {
   sumPoints += p.points_possible;
   return sumPoints;
 });
-console.log(sumPoints);
+console.log(`All points that due date is passed : ${sumPoints}`);
 
 // Find the 125-ID & 132-ID total scores (Due date Not considered)
 
 sumScores125 = 0;
 sumScores132 = 0;
-const onTimeScores = accAssignment.map((i) => i.id); // Check Scores Based On The Due Dates Acceptance
-console.log(`This is the due date list :${onTimeScores}`);
+const onTimeScores = accAssignment.map((i) => i.id); // Check Scores Based On The Due Dates Acceptance.
+// console.log(`This is the due date list :${onTimeScores}`);  This is Assignment's ID Array that due.
 
 LearnerSubmissions.forEach((l) => {
   let acceptScore = false;
   for (i = 0; i < onTimeScores.length; i++) {
-    
     if (l.assignment_id === onTimeScores[i]) {
       acceptScore = true;
       break;
@@ -136,48 +135,15 @@ LearnerSubmissions.forEach((l) => {
 
   if (l.learner_id === 125 && acceptScore) {
     sumScores125 += l.submission.score;
-  } else {
+  } else if (l.learner_id === 132 && acceptScore) {
     sumScores132 += l.submission.score;
   }
 });
-console.log(`ID-125 Scores : ${sumScores125}, ID-132 Scores: ${sumScores132}`);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(
+  `ID-125 Scores : ${sumScores125}/${sumPoints}, ID-132 Scores: ${sumScores132}/${sumPoints}`
+);
 
 console.log(result);
-
-
-
-
-
-
-
-
-
-
-
 
 // for (let assignment of AssignmentGroup.assignments){
 //   console.log(assignment.points_possible)                          // ALl Points Possible
