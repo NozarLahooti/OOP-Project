@@ -107,7 +107,6 @@ const accAssignment = AssignmentGroup.assignments.filter((d) => {
   return lastDate < deadLine;
 });
 
-
 // Sum of all points based on due date
 function addPoints(sum, assignment) {
   return sum + assignment.points_possible;
@@ -150,42 +149,14 @@ try {
   const avg125 = sumScores125 / sumPoints;
   const avg132 = sumScores132 / sumPoints;
 
-  console.log(`The average of ID-125 : ${avg125}%, The average of ID-132 : ${avg132}%`);
+  console.log(
+    `The average of ID-125 : ${avg125}%, The average of ID-132 : ${avg132}%`
+  );
 } catch (error) {
   console.error("There is an error occurred in calculations :", error);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 console.log(result);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // for (let assignment of AssignmentGroup.assignments){
 //   console.log(assignment.points_possible)                          // ALl Points Possible
