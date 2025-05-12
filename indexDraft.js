@@ -203,3 +203,12 @@ let roundedAverage132 = Math.round(average132 * 100) / 100;             // AVG L
 console.log(roundedAverage132)
 
 
+// let sumPoints = 0;
+
+// accAssignment.forEach((p) => {
+//   sumPoints += p.points_possible;
+//   return sumPoints;
+// });
+// console.log(`All points that due date is passed : ${sumPoints}`);
+
+// Find the 125-ID & 132-ID total scores (Due date Not considered)
